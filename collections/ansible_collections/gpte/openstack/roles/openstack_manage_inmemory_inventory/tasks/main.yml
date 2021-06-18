@@ -21,24 +21,6 @@
         loop: "{{ r_instances.openstack_servers }}"
         loop_control:
           loop_var: __instance
-      
-      - name: Set AnsibleGroup value
-        set_fact:
-          AnsibleGroup: "{{ __instance.metadata.AnsibleGroup }}" 
-        loop: "{{ r_instances.openstack_servers }}"
-        loop_control:
-          loop_var: __instance
-
-      - name: Generate lab static inventory file
-        template:
-          src: lab_inventory.j2
-          dest: "/tmp/my_inventory"
-        delegate_to: localhost
-
-      - name: Output location of example of inventory
-        debug:
-          msg: Your inventory was output to /tmp/my_inventory
-
   tags:
     - openstack-inventory
     - must
