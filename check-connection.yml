@@ -9,3 +9,5 @@
   roles:
 
     - openstack_manage_inmemory_inventory
+    
+ - name: Check Connection
