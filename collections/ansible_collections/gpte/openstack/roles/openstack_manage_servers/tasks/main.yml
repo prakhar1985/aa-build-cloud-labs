@@ -1,4 +1,4 @@
-- name: Create server instances
+- name: Create or Delete server instances
   
 
 
