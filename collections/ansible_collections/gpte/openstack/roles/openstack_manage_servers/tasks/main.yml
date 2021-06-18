@@ -2,6 +2,10 @@
   
 
 
+- name: Wait for async OSP instance creation to complete
+
+
+
 - when: openstack_server_state != 'absent' | default(true)
   block:
 
