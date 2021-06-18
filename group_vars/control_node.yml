@@ -13,3 +13,13 @@ openstack_servers:
     flavor: GLOBAL-CPU_4_Memory_32768_Disk_60_flavor
     key_name: "{{GUID}}-keypair"
     network: "{{GUID}}-dev-network"
+  - instance_name: server2
+    AnsibleGroup: servers
+    deployment: dev
+    security_group_name: "{{GUID}}-HostSG"
+    image: "{{ _server_image | default('rhel-8.3') }}"
+    openstack_cloud: "{{GUID}}-project"
+    flavor: GLOBAL-CPU_4_Memory_32768_Disk_60_flavor
+    key_name: "{{GUID}}-keypair"
+    network: "{{GUID}}-dev-network"
+    
